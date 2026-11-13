@@ -1,0 +1,9 @@
+{
+  "name": "small-calculators",
+  "version": "1.0.0",
+  "description": "Ten dependency-free calculator functions: mortgage, late-invoice interest, drone ND filter, tip pool, client LTV, commission split, freelance rate, recruiting funnel, churn, utilization.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=18" }
+}
