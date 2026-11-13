@@ -1,5 +1,7 @@
 # Small calculators, plain JavaScript
 
+**Live demo:** https://bardachtech.github.io/small-calculators/ runs every function below in your browser, with the test inputs. Change a number and the result updates.
+
 Ten pure functions behind the free calculators on tools.bardach-technologies.com: mortgage payment and the 28/36
 rule, late-invoice interest, a drone ND filter from the 180-degree shutter rule, a tip pool split, client lifetime value,
 a commission split, freelance rates, a recruiting funnel, membership churn and agency utilization.
