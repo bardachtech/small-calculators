@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>small-calculators demo</title>
+<style>
+:root{--bg:#fff;--fg:#1b1f24;--mut:#59636e;--line:#d1d9e0;--card:#f6f8fa;--acc:#0969da}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--fg:#e6edf3;--mut:#9198a1;--line:#3d444d;--card:#151b23;--acc:#4493f8}}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px}
+h1{font-size:1.5rem;margin:0 0 4px}p{color:var(--mut);margin:0 0 20px}
+a{color:var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+section{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}
+h2{font-size:1rem;margin:0 0 8px;font-family:ui-monospace,monospace}
+label{display:flex;justify-content:space-between;gap:8px;font-size:.85rem;margin:3px 0}
+input{width:110px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:4px;padding:2px 6px}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px;font-size:.8rem;overflow:auto;margin:8px 0}
+.foot{font-size:.8rem}
+</style>
+</head>
+<body>
+<main>
+<h1>small-calculators</h1>
+<p>Each card runs one function from <code>src/</code> in your browser, with the example inputs from the tests. Change a number and the result updates. Nothing is sent or stored. <a href="https://github.com/bardachtech/small-calculators">Source on GitHub</a> (MIT).</p>
+<div class="grid" id="grid">Loading…</div>
+</main>
+<script type="module">
+const PAGES = {
+  "home-affordability": "home-affordability-monthly-payment-calculator",
+  "late-fee": "late-invoice-interest-calculator",
+  "nd-filter": "drone-nd-filter-calculator",
+  "tip-pool": "tip-pool-calculator",
+  "client-ltv": "coaching-client-lifetime-value-calculator",
+  "commission-split": "real-estate-commission-split-calculator",
+  "freelance-rate": "freelance-hourly-rate-calculator",
+  "recruiting-funnel": "recruiting-funnel-calculator",
+  "churn-revenue": "membership-churn-revenue-calculator",
+  "utilization": "agency-utilization-rate-calculator",
+};
+const fmt = (o) => o === null ? "null (an input is out of range)" :
+  JSON.stringify(o, (k, v) => typeof v === "number" ? Math.round(v * 100) / 100 : v, 2);
+const grid = document.getElementById("grid");
+const vectors = await (await fetch("./test/vectors.json")).json();
+grid.textContent = "";
+for (const [name, v] of Object.entries(vectors)) {
+  const mod = await import(`./src/${name}.js`);
+  const sec = document.createElement("section");
+  const h = document.createElement("h2"); h.textContent = v.fn + "()"; sec.append(h);
+  const inputs = {};
+  for (const [key, val] of Object.entries(v.input)) {
+    const lab = document.createElement("label"); lab.textContent = key;
+    const inp = document.createElement("input"); inp.type = "number"; inp.step = "any"; inp.value = val;
+    inputs[key] = inp; lab.append(inp); sec.append(lab);
+  }
+  const out = document.createElement("pre"); sec.append(out);
+  const run = () => {
+    const args = Object.fromEntries(Object.entries(inputs).map(([k, i]) => [k, i.value === "" ? NaN : Number(i.value)]));
+    out.textContent = fmt(mod[v.fn](args));
+  };
+  Object.values(inputs).forEach((i) => i.addEventListener("input", run)); run();
+  const foot = document.createElement("div"); foot.className = "foot";
+  const a = document.createElement("a");
+  a.href = `https://tools.bardach-technologies.com/tool/${PAGES[name]}?utm_source=github`;
+  a.textContent = "Full calculator with explanations"; foot.append(a); sec.append(foot);
+  grid.append(sec);
+}
+</script>
+</body>
+</html>
