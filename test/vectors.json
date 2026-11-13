@@ -1,0 +1,163 @@
+{
+ "home-affordability": {
+  "fn": "homeAffordability",
+  "input": {
+   "price": 400000,
+   "down": 20,
+   "rate": 6.5,
+   "years": 30,
+   "taxrate": 1.1,
+   "ins": 1800,
+   "hoa": 0,
+   "income": 120000,
+   "debts": 500
+  },
+  "expect": {
+   "loan": 320000.0,
+   "payment_pi": 2022.617675177489,
+   "total_month": 2539.2843418441557,
+   "max_housing": 2800.0000000000005,
+   "max_price": 443647.4895163985
+  }
+ },
+ "late-fee": {
+  "fn": "lateFee",
+  "input": {
+   "amount": 2400,
+   "rate": 12,
+   "days": 45,
+   "fee": 25
+  },
+  "expect": {
+   "interest": 35.50684931506849,
+   "total": 2460.5068493150684
+  }
+ },
+ "nd-filter": {
+  "fn": "ndFilter",
+  "input": {
+   "fps": 30,
+   "metered": 2000
+  },
+  "expect": {
+   "stops": 5.058893689053568,
+   "nd_stops": 5,
+   "nd": 32
+  }
+ },
+ "tip-pool": {
+  "fn": "tipPool",
+  "input": {
+   "pool": 1200,
+   "h1": 8,
+   "p1": 3,
+   "h2": 6,
+   "p2": 3,
+   "h3": 7,
+   "p3": 2,
+   "h4": 6,
+   "p4": 1,
+   "h5": 4,
+   "p5": 1,
+   "h6": 0,
+   "p6": 0
+  },
+  "expect": {
+   "units": 66,
+   "per_unit": 18.181818181818183
+  }
+ },
+ "client-ltv": {
+  "fn": "clientLtv",
+  "input": {
+   "fee": 300,
+   "churn": 12.5,
+   "margin": 80,
+   "cac": 250
+  },
+  "expect": {
+   "months": 8.0,
+   "ltv": 1920.0,
+   "ltv_cac": 7.68,
+   "payback": 1.0416666666666667
+  }
+ },
+ "commission-split": {
+  "fn": "commissionSplit",
+  "input": {
+   "price": 450000,
+   "rate": 5.5,
+   "side": 50,
+   "split": 70,
+   "fees": 495
+  },
+  "expect": {
+   "agent_gross": 8662.5,
+   "net": 8167.5
+  }
+ },
+ "freelance-rate": {
+  "fn": "freelanceRate",
+  "input": {
+   "income": 60000,
+   "tax": 25,
+   "costs": 6000,
+   "off": 6,
+   "hours": 40,
+   "billable": 60,
+   "day": 8
+  },
+  "expect": {
+   "revenue": 86000.0,
+   "hours": 1104.0,
+   "hourly": 77.89855072463769,
+   "day": 623.1884057971015
+  }
+ },
+ "recruiting-funnel": {
+  "fn": "recruitingFunnel",
+  "input": {
+   "hires": 1,
+   "accept": 85,
+   "offer": 25,
+   "interview": 40,
+   "reply": 20,
+   "minutes": 5
+  },
+  "expect": {
+   "offers": 2,
+   "interviews": 8,
+   "screens": 20,
+   "sourced": 100
+  }
+ },
+ "churn-revenue": {
+  "fn": "churnRevenue",
+  "input": {
+   "members": 120,
+   "fee": 90,
+   "churn": 5,
+   "joins": 8
+  },
+  "expect": {
+   "members_12": 138.38559649349452,
+   "steady_members": 160.0,
+   "steady_mrr": 14400.0
+  }
+ },
+ "utilization": {
+  "fn": "utilization",
+  "input": {
+   "people": 5,
+   "hours": 160,
+   "billable": 520,
+   "rate": 120,
+   "target": 75
+  },
+  "expect": {
+   "utilization": 65.0,
+   "gap_hours": 80.0,
+   "gap_revenue": 9600.0
+  }
+ }
+}
