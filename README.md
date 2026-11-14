@@ -41,4 +41,4 @@ check your own contract and local law.
 
 ## Licence
 
-MIT. Built by Bardach Technologies with AI assistance; every formula is checked by the tests above.
+MIT. Built by Bardach Technologies; every formula is checked by the tests above.
