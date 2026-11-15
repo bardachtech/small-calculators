@@ -6,10 +6,10 @@ const vectors = JSON.parse(readFileSync(new URL("./vectors.json", import.meta.ur
 const TOLERANCE = 1e-9;
 
 for (const [name, v] of Object.entries(vectors)) {
-  test(`${v.fn} matches the independent reference on the example inputs`, async () => {
+  test(`${v.fn} matches the independent reference on the test inputs`, async () => {
     const mod = await import(`../src/${name}.js`);
     const got = mod[v.fn](v.input);
-    assert.ok(got, `${v.fn} returned null for the example inputs`);
+    assert.ok(got, `${v.fn} returned null for the test inputs`);
     for (const [key, want] of Object.entries(v.expect)) {
       assert.ok(Math.abs(got[key] - want) <= TOLERANCE * Math.max(1, Math.abs(want)), `${key}: got ${got[key]}, want ${want}`);
     }
