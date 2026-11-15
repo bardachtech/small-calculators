@@ -1,6 +1,6 @@
 // Drone ND filter (180-degree shutter rule)
 // Live calculator: https://tools.bardach-technologies.com/tool/drone-nd-filter-calculator
-// Input: one object with these fields (example values from the live page): {"fps": 30, "metered": 2000}
+// Input: one object with these fields (the live page's default values): {"fps": 30, "metered": 2000}
 // Returns an object of results, or null when an input is out of range.
 
 export function ndFilter(v) {

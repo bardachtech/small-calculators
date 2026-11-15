@@ -1,6 +1,6 @@
 // Agency utilization rate and revenue gap
 // Live calculator: https://tools.bardach-technologies.com/tool/agency-utilization-rate-calculator
-// Input: one object with these fields (example values from the live page): {"people": 5, "hours": 160, "billable": 520, "rate": 120, "target": 75}
+// Input: one object with these fields (the live page's default values): {"people": 5, "hours": 160, "billable": 520, "rate": 120, "target": 75}
 // Returns an object of results, or null when an input is out of range.
 
 export function utilization(v) {

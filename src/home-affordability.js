@@ -1,6 +1,6 @@
 // Home affordability and monthly mortgage payment
 // Live calculator: https://tools.bardach-technologies.com/tool/home-affordability-monthly-payment-calculator
-// Input: one object with these fields (example values from the live page): {"price": 400000, "down": 20, "rate": 6.5, "years": 30, "taxrate": 1.1, "ins": 1800, "hoa": 0, "income": 120000, "debts": 500}
+// Input: one object with these fields (the live page's default values): {"price": 400000, "down": 20, "rate": 6.5, "years": 30, "taxrate": 1.1, "ins": 1800, "hoa": 0, "income": 120000, "debts": 500}
 // Returns an object of results, or null when an input is out of range.
 
 export function homeAffordability(v) {

@@ -1,6 +1,6 @@
 // Late invoice interest and fee
 // Live calculator: https://tools.bardach-technologies.com/tool/late-invoice-interest-calculator
-// Input: one object with these fields (example values from the live page): {"amount": 2400, "rate": 12, "days": 45, "fee": 25}
+// Input: one object with these fields (the live page's default values): {"amount": 2400, "rate": 12, "days": 45, "fee": 25}
 // Returns an object of results, or null when an input is out of range.
 
 export function lateFee(v) {

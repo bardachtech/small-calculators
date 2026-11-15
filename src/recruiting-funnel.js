@@ -1,6 +1,6 @@
 // Recruiting funnel: candidates to source per hire
 // Live calculator: https://tools.bardach-technologies.com/tool/recruiting-funnel-calculator
-// Input: one object with these fields (example values from the live page): {"hires": 1, "accept": 85, "offer": 25, "interview": 40, "reply": 20, "minutes": 5}
+// Input: one object with these fields (the live page's default values): {"hires": 1, "accept": 85, "offer": 25, "interview": 40, "reply": 20, "minutes": 5}
 // Returns an object of results, or null when an input is out of range.
 
 export function recruitingFunnel(v) {

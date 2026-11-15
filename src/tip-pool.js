@@ -1,6 +1,6 @@
 // Tip pool split by hours and points
 // Live calculator: https://tools.bardach-technologies.com/tool/tip-pool-calculator
-// Input: one object with these fields (example values from the live page): {"pool": 1200, "h1": 8, "p1": 3, "h2": 6, "p2": 3, "h3": 7, "p3": 2, "h4": 6, "p4": 1, "h5": 4, "p5": 1, "h6": 0, "p6": 0}
+// Input: one object with these fields (the live page's default values): {"pool": 1200, "h1": 8, "p1": 3, "h2": 6, "p2": 3, "h3": 7, "p3": 2, "h4": 6, "p4": 1, "h5": 4, "p5": 1, "h6": 0, "p6": 0}
 // Returns an object of results, or null when an input is out of range.
 
 export function tipPool(v) {

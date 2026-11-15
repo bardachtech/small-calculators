@@ -1,6 +1,6 @@
 // Membership churn and monthly revenue
 // Live calculator: https://tools.bardach-technologies.com/tool/membership-churn-revenue-calculator
-// Input: one object with these fields (example values from the live page): {"members": 120, "fee": 90, "churn": 5, "joins": 8}
+// Input: one object with these fields (the live page's default values): {"members": 120, "fee": 90, "churn": 5, "joins": 8}
 // Returns an object of results, or null when an input is out of range.
 
 export function churnRevenue(v) {

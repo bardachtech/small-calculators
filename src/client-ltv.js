@@ -1,6 +1,6 @@
 // Client lifetime value, LTV:CAC and payback
 // Live calculator: https://tools.bardach-technologies.com/tool/coaching-client-lifetime-value-calculator
-// Input: one object with these fields (example values from the live page): {"fee": 300, "churn": 12.5, "margin": 80, "cac": 250}
+// Input: one object with these fields (the live page's default values): {"fee": 300, "churn": 12.5, "margin": 80, "cac": 250}
 // Returns an object of results, or null when an input is out of range.
 
 export function clientLtv(v) {

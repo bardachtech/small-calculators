@@ -1,6 +1,6 @@
 // Freelance hourly and day rate
 // Live calculator: https://tools.bardach-technologies.com/tool/freelance-hourly-rate-calculator
-// Input: one object with these fields (example values from the live page): {"income": 60000, "tax": 25, "costs": 6000, "off": 6, "hours": 40, "billable": 60, "day": 8}
+// Input: one object with these fields (the live page's default values): {"income": 60000, "tax": 25, "costs": 6000, "off": 6, "hours": 40, "billable": 60, "day": 8}
 // Returns an object of results, or null when an input is out of range.
 
 export function freelanceRate(v) {
