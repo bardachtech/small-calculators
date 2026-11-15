@@ -35,9 +35,8 @@ re-implementation of each formula, so the tests compare two independent implemen
 
 ## Limits
 
-These are arithmetic helpers with example inputs, not financial, legal, tax or flight advice. The mortgage function
-leaves out mortgage insurance and closing costs; the late-fee function uses simple daily interest on a 365-day year;
-check your own contract and local law.
+The mortgage function leaves out mortgage insurance and closing costs; the late-fee function uses simple daily
+interest on a 365-day year.
 
 ## Licence
 
